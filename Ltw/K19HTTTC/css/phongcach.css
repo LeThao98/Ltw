@@ -1,0 +1,42 @@
+body {
+	background: url("../img/bg.jpg") repeat-x top right;
+}
+
+p {
+	color: white; 
+	font-family: tahoma;
+}
+
+#NGUOIYEU {
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-size: 24px;
+	color: red;
+}
+
+.BANBE {
+	text-transform: lowercase;
+	font-weight: bold;
+	color: blue;
+	font-size: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: red;
+}
+
+a:hover {
+	color: black !important;
+}
+
+a:visited {
+	color: red;
+}
+
+a:active {
+	color: black;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Liên hệ</title>
+	<link rel="stylesheet" type="text/css" href="./css/phongcach.css">
+</head>
+<body>
+	<h1>LIÊN HỆ</h1>
+
+	<hr>
+	<h3><a href="trang_chu.html">Trang chủ</a> | <a href="gioi_thieu.html">Giới thiệu</a> | <a href="tin_tuc.html">Tin tức</a> | <a href="san_pham.html">Sản phẩm</a> | <a href="lien_he.html">Liên hệ</a></h3>
+	<hr>
+
+	<h3 style="color: red; text-align: center; text-transform: uppercase;">THÔNG TIN LIÊN HỆ</h3>
+
+	<ul>
+		<li>Công ty TNHH giải pháp ABC</li>
+		<li><b>Địa chỉ:</b> 9999 Chùa Bộc, Đống Đa, Hà Nội</li>
+		<li><i>Điện thoại:</i> <font color="red">0989.999999</font></li>
+		<li><b><i>Email:</i></b> contact@abc.com.vn</li>
+		<li><b><u>Website:</u></b> http://abc.com.vn</li>
+	</ul>
+
+	<ol>
+		<li>Công ty TNHH giải pháp ABC</li>
+		<li>Địa chỉ: 9999 Chùa Bộc, Đống Đa, Hà Nội</li>
+		<li>Điện thoại: 0989.999999</li>
+		<li>Email: contact@abc.com.vn</li>
+		<li>Website: http://abc.com.vn</li>
+	</ol>
+	<hr>
+
+	<h3 style="color: red; text-align: center; text-transform: uppercase;">PHẢN HỒI</h3>
+
+	<form action="phan_hoi.html" method="post">
+	<table>
+		<tr>
+			<td>Họ và tên</td>
+			<td>
+				<input type="text" name="txtHoVaTen">
+			</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>
+				<input type="text" name="txtEmail">
+			</td>
+		</tr>
+		<tr>
+			<td>Số điện thoại</td>
+			<td>
+				<input type="text" name="txtSoDienThoai">
+			</td>
+		</tr>
+		<tr>
+			<td id='phanhoi'>Nội dung phản hồi</td>
+			<td>
+				<textarea name="txtNoiDungPhanHoi" style="width: 500px; height: 100px"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				<input type="submit" name="btnSubmit" value="Gửi phản hồi" onclick="return kiemtrahople()">
+
+				<button type="button" name="btnHuy" onclick="document.getElementById('phanhoi').innerHTML='<b>Không cần nhập</b>'">Hủy</button>
+
+				<button type="button" name="btnHUy2" onclick="xulyhuy()">Xử lý hủy cách 2</button>
+			</td>
+		</tr>
+	</table>
+	</form>
+
+	<script type="text/javascript">
+		/*
+		- Người viết: Vũ Văn Tèo
+		- Ngày viết: 26/2/2019
+		- Mục đích: Thực hiện xử lý khi người dùng chọn hủy phản hồi
+		- Phiên bản: version 1.1
+		*/
+		function kiemtrahople() {
+			var hoten = document.getElementsByName("txtHoVaTen")[0].value;
+			var dienthoai = document.getElementsByName("txtSoDienThoai")[0].value;
+			var email = document.getElementsByName("txtEmail")[0].value;
+			var noidung = document.getElementsByName("txtNoiDungPhanHoi")[0].value;
+
+			if(hoten=="" || dienthoai=="" || email=="" || noidung=="") {
+				window.alert("Dữ liệu bạn nhập còn thiếu. Vui lòng nhập tiếp.");
+				return false;
+			} else {
+				window.alert("Bạn đã gửi phản hồi thành công. Chúng tôi sẽ sớm liên hệ với bạn.");
+				return true;
+			}
+
+		}
+
+		function xulyhuy() {
+			document.getElementById('phanhoi').innerHTML='<b>Không cần nhập</b>';
+
+			window.alert('Đã hủy phản hồi');
+
+			// document.write("ĐÃ HỦY");
+			// console.log("ĐÃ HỦY NHÉ ACE");
+		}
+	</script>
+</body>
+</html>
